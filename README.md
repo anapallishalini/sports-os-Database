@@ -319,13 +319,3 @@ This Database Layer is designed to integrate with:
 * CSV Import Completed
 * Sports Collection Added
 * GitHub Repository Updated
-
----
-
-# Author
-
-**Shalini Anapalli**
-
-Sports OS – Database Layer
-
-Built using MongoDB, Node.js, Express.js, and Mongoose.
