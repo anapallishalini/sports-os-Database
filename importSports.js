@@ -1,10 +1,11 @@
+require('dotenv').config();
 const fs = require('fs');
 const csv = require('csv-parser');
 const mongoose = require('mongoose');
 
 const Sport = require('./models/Sport');
 
-mongoose.connect('mongodb://localhost:27017/sportsOS');
+mongoose.connect(process.env.MONGO_URI);
 
 const results = [];
 

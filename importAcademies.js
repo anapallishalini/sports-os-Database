@@ -1,10 +1,11 @@
+require('dotenv').config();
 const fs = require('fs');
 const csv = require('csv-parser');
 const mongoose = require('mongoose');
 
 const Academy = require('./models/Academy');
 
-mongoose.connect('mongodb://localhost:27017/sportsOS');
+mongoose.connect(process.env.MONGO_URI);
 
 const results = [];
 
@@ -15,7 +16,7 @@ fs.createReadStream('academies.csv')
       results.push({
 
           academyId:data['Academy ID'],
-          name:data['Academ y Name'],
+          name:data['Academy Name'],
           slug:data['Slug'],
 
           latitude:Number(data['Latitude']),

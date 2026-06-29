@@ -1,10 +1,11 @@
+require('dotenv').config();
 const fs = require('fs');
 const csv = require('csv-parser');
 const mongoose = require('mongoose');
 
 const Coach = require('./models/Coach');
 
-mongoose.connect('mongodb://localhost:27017/sportsOS');
+mongoose.connect(process.env.MONGO_URI);
 
 const results = [];
 
@@ -20,7 +21,7 @@ fs.createReadStream('academies.csv')
 
         experienceYears: parseInt(data['Coach Experience']) || 0,
 
-        certifications: data['Certifications'],
+        certification: data['Certifications'],
 
         academy: data['Academy Name'],
 

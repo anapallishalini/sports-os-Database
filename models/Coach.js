@@ -12,7 +12,7 @@ const coachSchema = new mongoose.Schema({
 
    experienceYears:Number,
 
-   academyId:Number,
+   academyId:String,
 
    rating:{
       type:Number,
